@@ -1,5 +1,5 @@
 " Jaxon Haws
-"vim:foldmethod=marker:foldlevel=0
+" Vim: set fdm=marker fmr={{{,}}} fdl=0 fdls=-1:
 
 "  Colors {{{
 syntax on                       " turn on syntax processing
@@ -82,6 +82,8 @@ set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
+set modeline
+set modelines=2
 
 nnoremap <space> za
 
@@ -232,6 +234,7 @@ nnoremap <silent> gh :call CocActionAsync('doHover')<CR>
 
 " }}}
 
+" Treesitter Inline Lua {{{
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -258,4 +261,4 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
+" }}}
