@@ -48,6 +48,8 @@ autocmd FileType python
 autocmd Filetype make setlocal noexpandtab
 " Use two-space indents for CSS, HTML, JavaScript.
 autocmd FileType css,html,javascript setlocal ts=2 sts=2 sw=2
+" Use four-space indents for C and Go
+autocmd FileType c,go setlocal ts=4 sts=4 sw=4
 " Allow backspacing over autoindents, newlines, and start of insert.
 set backspace=indent,eol,start
 " }}}
