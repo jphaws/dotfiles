@@ -17,6 +17,7 @@ set autoread                        " update vim when file is changed from outsi
 set ruler 
 set cursorline
 set relativenumber
+set number
 " Use Bash-esque file completion.
 set wildmode=longest:full,full
 set wildmenu
@@ -113,6 +114,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-loc
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end() 
 colorscheme nordfox
 " }}}
@@ -226,6 +229,10 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " }}}
 
+" vim-go {{{
+let g:go_doc_keywordprg_enabled = 0
+" }}}
+
 " Telescope keybinds {{{
 " Find files using Telescope command-line sugar.
 nnoremap <c-f> <cmd>Telescope find_files<cr>
@@ -264,3 +271,4 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 " }}}
+"
